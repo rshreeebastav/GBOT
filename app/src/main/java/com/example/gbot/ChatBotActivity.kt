@@ -35,31 +35,6 @@ class ChatBotActivity : AppCompatActivity() {
 
 
         // pass the arguments
-        chatItemClasses.add(
-            ChatItemClass(
-                ChatItemClass.LayoutOne,
-                "Good Afternoon"
-            )
-        )
-
-
-
-
-        adapterChat = AdapterChat(chatItemClasses)
-
-        // set the adapter
-        recyclerView!!.adapter = adapterChat
-        adapterChat!!.notifyDataSetChanged()
-        recyclerView!!.scrollToPosition(chatItemClasses.size - 1)
-
-    }
-
-
-
-    fun travelDesk(view: View) {
-
-
-        recyclerView!!.startLayoutAnimation()
 
         chatItemClasses.add(
             ChatItemClass(
@@ -68,7 +43,7 @@ class ChatBotActivity : AppCompatActivity() {
             )
         )
 
-        adapterChat!!.notifyDataSetChanged()
+
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1)
         chatItemClasses.add(
             ChatItemClass(
@@ -77,63 +52,75 @@ class ChatBotActivity : AppCompatActivity() {
             )
         )
 
+
+
+        adapterChat = AdapterChat(chatItemClasses)
+
+        // set the adapter
+        recyclerView!!.adapter = adapterChat
+//        recyclerView!!.startLayoutAnimation()
         adapterChat!!.notifyDataSetChanged()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1)
+
     }
 
-        fun internationalClick(view: View) {
-            recyclerView!!.startLayoutAnimation()
-            adapterChat!!.notifyDataSetChanged()
-            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutThree,
-                    "Hey John! we are checking with your pre-requisites based on your travel request"
-                )
+
+    fun internationalClick(view: View) {
+        recyclerView!!.startLayoutAnimation()
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.clearAnimation()
+//        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Hey John! we are checking with your pre-requisites based on your travel request"
             )
+        )
+        adapterChat!!.notifyDataSetChanged()
 //            adapterChat!!.notifyDataSetChanged()
 //            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutThree,
-                    "Please allow us a movement."
-                )
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Please allow us a movement."
             )
-            adapterChat!!.notifyDataSetChanged()
+        )
+        adapterChat!!.notifyDataSetChanged()
 //            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutFour,
-                    "VISA"
-                )
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutFour,
+                "VISA"
             )
-            adapterChat!!.notifyDataSetChanged()
-            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutThree,
-                    "We have verified your checklist and we have all the info which required for your travel request"
-                )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "We have verified your checklist and we have all the info which required for your travel request"
             )
-            adapterChat!!.notifyDataSetChanged()
-            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutThree,
-                    "Please select your journey type"
-                )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Please select your journey type"
             )
-            adapterChat!!.notifyDataSetChanged()
-            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-            chatItemClasses.add(
-                ChatItemClass(
-                    ChatItemClass.LayoutFive,
-                    "One Way"
-                )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutFive,
+                "One Way"
             )
-            adapterChat!!.notifyDataSetChanged()
-            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        }
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        recyclerView!!.clearAnimation()
+    }
 
     fun domesticClick(view: View) {
         recyclerView!!.startLayoutAnimation()
@@ -185,7 +172,29 @@ class ChatBotActivity : AppCompatActivity() {
             )
         )
         adapterChat!!.notifyDataSetChanged()
+//        recyclerView!!.scrollToPosition(chatItemClasses.size - 1)
+////        recyclerView!!.startLayoutAnimation()
+//
+    }
+
+    fun oneWayClick(view: View) {
+//        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.clearAnimation()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 4);
+//       recyclerView!!.startLayoutAnimation()
+
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutSix,
+                "From"
+            )
+        )
+
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.startLayoutAnimation()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+
+
     }
 
 }

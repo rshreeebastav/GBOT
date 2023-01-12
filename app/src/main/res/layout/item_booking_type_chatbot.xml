@@ -11,8 +11,8 @@
 
     <LinearLayout
         android:id="@+id/itemCbBookingTypeLl"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,23 +33,21 @@
             android:onClick="internationalClick"
             android:padding="@dimen/_12sdp"
             android:text="International"
-            android:textColor="@color/black"
-             />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/text_two"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_10sdp"
             android:background="@drawable/btn_ripple_effect"
             android:clickable="true"
-            android:layout_marginStart="@dimen/_10sdp"
             android:contextClickable="true"
             android:onClick="domesticClick"
             android:padding="@dimen/_12sdp"
             android:text="Domestic"
-            android:textColor="@color/black"
-            />
+            android:textColor="@color/black" />
 
 
     </LinearLayout>

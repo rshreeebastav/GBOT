@@ -1,5 +1,7 @@
 package com.example.gbot
 
+import android.text.Layout
+
 class ChatItemClass {
     // This variable ViewType specifies
     // which out of the two layouts
@@ -13,12 +15,15 @@ class ChatItemClass {
     var textthree: String? = null
     var textfour: String? = null
     var textfive: String? = null
+    var text_from_oneway: String? = null
+
     // public constructor for the first layout
     constructor(viewType: Int, text: String?) {
         this.text = text
         this.textthree = text
         this.textfour = text
         this.textfive = text
+        this.text_from_oneway = text
         this.viewType = viewType
     }
 
@@ -39,17 +44,16 @@ class ChatItemClass {
     }
 
 
-
-
     companion object {
         // Integers assigned to each layout
         // these are declared static so that they can
         // be accessed from the class name itself
         // And final so that they are not modified later
-        const val LayoutOne = 0
+//        const val LayoutOne = 0
         const val LayoutTwo = 1
         const val LayoutThree = 2
         const val LayoutFour = 3
         const val LayoutFive = 4
+        const val LayoutSix = 5
     }
 }

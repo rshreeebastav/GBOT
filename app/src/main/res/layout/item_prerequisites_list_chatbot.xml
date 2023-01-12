@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/_10sdp"
     android:background="#F5F2EC"
-    >
+    android:padding="@dimen/_10sdp">
 
 
     <LinearLayout
         android:id="@+id/itemCbPrerequisiteslistLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -55,8 +54,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:text="VISA"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -115,8 +114,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="Passport"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -178,8 +177,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="AADHAR"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -241,8 +240,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="PAN"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -304,8 +303,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="Phone"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -366,8 +365,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="Email"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 
@@ -429,8 +428,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="KYC"
-                        android:textStyle="bold"
                         android:textColor="#404040"
+                        android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
                 </LinearLayout>
 

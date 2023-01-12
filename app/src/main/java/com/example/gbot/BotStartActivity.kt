@@ -17,7 +17,7 @@ class BotStartActivity : AppCompatActivity() {
         //Intent to the mainActivity
         val floatingbutton: FloatingActionButton = findViewById(R.id.floating_btn)
         floatingbutton.setOnClickListener {
-            val fb = Intent(this@BotStartActivity, ChatBotActivity::class.java)
+            val fb = Intent(this@BotStartActivity, GreetingActivity::class.java)
             //Declare for the Activity Animation
             val b = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
             startActivity(fb, b)

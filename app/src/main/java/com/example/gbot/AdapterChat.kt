@@ -7,56 +7,47 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.*
 
 class AdapterChat     // public constructor for this class
-    (private val chatItemClassList: List<ChatItemClass>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    (private val chatItemClassList: List<ChatItemClass>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     // Override the getItemViewType method.
     // This method uses a switch statement
     // to assign the layout to each item
     // depending on the viewType passed
     override fun getItemViewType(position: Int): Int {
         return when (chatItemClassList[position].viewType) {
-            0 -> ChatItemClass.LayoutOne
+//            0 -> ChatItemClass.LayoutOne
             1 -> ChatItemClass.LayoutTwo
             2 -> ChatItemClass.LayoutThree
             3 -> ChatItemClass.LayoutFour
             4 -> ChatItemClass.LayoutFive
+            5 -> ChatItemClass.LayoutSix
             else -> -1
         }
     }
 
     // Create classes for each layout ViewHolder.
-    internal inner class LayoutOneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textview: TextView
-        val linearLayout: LinearLayout
-
-        init {
-
-            // Find the Views
-            textview = itemView.findViewById(R.id.text)
-            linearLayout = itemView.findViewById(R.id.itemCbGrettingLlMain)
-            val cal = Calendar.getInstance()
-            val jam = cal[Calendar.HOUR_OF_DAY]
-            if (jam >= 0 && jam < 12) {
-                textview.text = "Good Morning"
-            } else if (jam >= 12 && jam < 16) {
-                textview.text = "Good Afternoon"
-                //        }else if (jam >= 16 && jam < 21){
-//            timer.setText("Good Evening");
+//    internal inner class LayoutOneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//        private val textview: TextView
+//        val linearLayout: LinearLayout
+//
+//        init {
+//
+//            // Find the Views
+//            textview = itemView.findViewById(R.id.text)
+//            linearLayout = itemView.findViewById(R.id.itemCbGrettingLlMain)
+//
 //        }
 //
-            } else {
-                textview.text = "Good Evening"
-            }
-        }
-
-        // method to set the views that will
-        // be used further in onBindViewHolder method.
-        fun setView(text: String?) {
-            textview.text = text
-        }
-    }
+//        // method to set the views that will
+//        // be used further in onBindViewHolder method.
+//        fun setView(text: String?) {
+//            textview.text = text
+//        }
+//    }
 
     // similarly a class for the second layout is also
     // created.
@@ -64,6 +55,7 @@ class AdapterChat     // public constructor for this class
         private val text_one: TextView
         private val text_two: TextView
         val linearLayout: LinearLayout
+
 
         init {
 
@@ -73,7 +65,7 @@ class AdapterChat     // public constructor for this class
         }
 
         fun setViews(
-          textOne: String?,
+            textOne: String?,
             textTwo: String?,
         ) {
 
@@ -127,7 +119,7 @@ class AdapterChat     // public constructor for this class
         init {
 
             // Find the Views
-            textview = itemView.findViewById(R.id.textfive)
+            textview = itemView.findViewById(R.id.btn_one_way)
             linearLayout = itemView.findViewById(R.id.itemCbTripTypeLl)
         }
 
@@ -137,48 +129,78 @@ class AdapterChat     // public constructor for this class
             textview.text = textfive
         }
     }
+    internal inner class LayoutSixViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val textview: TextView
+        val constraintLayout: ConstraintLayout
+
+        init {
+
+            // Find the Views
+            textview = itemView.findViewById(R.id.text_from_oneway)
+            constraintLayout = itemView.findViewById(R.id.itemCbTripOptionOneWayCl)
+        }
+
+        // method to set the views that will
+        // be used further in onBindViewHolder method.
+        fun setViewSix(text_from_oneway: String?) {
+            textview.text = text_from_oneway
+        }
+    }
+
 
     // In the onCreateViewHolder, inflate the
     // xml layout as per the viewType.
     // This method returns either of the
     // ViewHolder classes defined above,
     // depending upon the layout passed as a parameter.
-    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            ChatItemClass.LayoutOne -> {
-                val layoutOne =
-                    LayoutInflater.from(parent.context).inflate(R.layout.item_greeting_chatbot, parent, false)
-                LayoutOneViewHolder(layoutOne)
-
-            }
+//            ChatItemClass.LayoutOne -> {
+//                val layoutOne =
+//                    LayoutInflater.from(parent.context)
+//                        .inflate(R.layout.item_greeting_chatbot, parent, false)
+//                LayoutOneViewHolder(layoutOne)
+//
+//            }
             ChatItemClass.LayoutTwo -> {
                 val layoutTwo =
-                    LayoutInflater.from(parent.context).inflate(R.layout.item_booking_type_chatbot, parent, false)
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_booking_type_chatbot, parent, false)
                 LayoutTwoViewHolder(layoutTwo)
             }
             ChatItemClass.LayoutThree -> {
                 val layoutThree =
-                    LayoutInflater.from(parent.context).inflate(R.layout.item_chatbot_message, parent, false)
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_chatbot_message, parent, false)
                 LayoutThreeViewHolder(layoutThree)
             }
 
             ChatItemClass.LayoutFour -> {
                 val layoutFour =
-                    LayoutInflater.from(parent.context).inflate(R.layout.item_prerequisites_list_chatbot, parent, false)
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_prerequisites_list_chatbot, parent, false)
                 LayoutFourViewHolder(layoutFour)
             }
             ChatItemClass.LayoutFive -> {
                 val layoutFive =
-                    LayoutInflater.from(parent.context).inflate(R.layout.item_trip_option_chatbot, parent, false)
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_trip_option_chatbot, parent, false)
                 LayoutFiveViewHolder(layoutFive)
             }
+            ChatItemClass.LayoutSix -> {
+                val layoutSix =
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_trip_option_one_way_chatbot, parent, false)
+                LayoutSixViewHolder(layoutSix)
+            }
 //
-          else -> {
+            else -> {
 
-              val layoutTwo =
-                  LayoutInflater.from(parent.context).inflate(R.layout.item_booking_type_chatbot, parent, false)
-              LayoutTwoViewHolder(layoutTwo)
-          }
+                val layoutTwo =
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_booking_type_chatbot, parent, false)
+                LayoutTwoViewHolder(layoutTwo)
+            }
 
         }
     }
@@ -188,21 +210,21 @@ class AdapterChat     // public constructor for this class
     // respective ViewHolder classes.
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (chatItemClassList[position].viewType) {
-            ChatItemClass.LayoutOne -> {
-                val text = chatItemClassList[position].text
-                (holder as LayoutOneViewHolder).setView(text)
-
-                // The following code pops a toast message
-                // when the item layout is clicked.
-                // This message indicates the corresponding
-                // layout.
-                holder.linearLayout.setOnClickListener { view ->
-                    Toast.makeText(view.context, "Hello from Layout One!", Toast.LENGTH_SHORT)
-                        .show()
-
-
-                }
-            }
+//            ChatItemClass.LayoutOne -> {
+//                val text = chatItemClassList[position].text
+//                (holder as LayoutOneViewHolder).setView(text)
+//
+//                // The following code pops a toast message
+//                // when the item layout is clicked.
+//                // This message indicates the corresponding
+//                // layout.
+//                holder.linearLayout.setOnClickListener { view ->
+//                    Toast.makeText(view.context, "Hello from Layout One!", Toast.LENGTH_SHORT)
+//                        .show()
+//
+//
+//                }
+//            }
             ChatItemClass.LayoutTwo -> {
                 val text_one = chatItemClassList[position].text_one
                 val text_two = chatItemClassList[position].text_two
@@ -253,6 +275,22 @@ class AdapterChat     // public constructor for this class
                 holder.linearLayout.setOnClickListener { view ->
                     Toast.makeText(view.context, "Hello from Layout Five!", Toast.LENGTH_SHORT)
                         .show()
+
+
+                }
+            }
+                ChatItemClass.LayoutSix -> {
+                    val text_from_oneway = chatItemClassList[position].text_from_oneway
+                    (holder as LayoutSixViewHolder).setViewSix(text_from_oneway)
+
+                    // The following code pops a toast message
+                    // when the item layout is clicked.
+                    // This message indicates the corresponding
+                    // layout.
+                    holder.constraintLayout.setOnClickListener { view ->
+                        Toast.makeText(view.context, "Hello from Layout Six!", Toast.LENGTH_SHORT)
+                            .show()
+
 
 
                 }

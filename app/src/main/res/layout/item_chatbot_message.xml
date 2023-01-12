@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <LinearLayout
@@ -41,11 +41,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_9sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:textSize="@dimen/_14ssp"
-                android:textColor="#404040"
                 android:background="@drawable/card_design"
                 android:padding="@dimen/_8sdp"
                 android:text="@string/text_bot_first_msg"
+                android:textColor="#404040"
+                android:textSize="@dimen/_14ssp"
 
 
                 />
