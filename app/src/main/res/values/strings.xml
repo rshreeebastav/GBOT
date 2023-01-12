@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GatewayBot</string>
+<!--    For Quotes-->
+    <string name="text_quotes">Lorem ipsum dolor sit amet consectetur. Interdum pellentesque purus dignissim vulputate blandit bibendum ipsum faucibus mauris.</string>
+
+<!--    For Name-->
+    <string name="text_name">~ Name</string>
+<!--    For Greeting-->
+    <string name="text_greet">Good Morning John !</string>
+    <string name="text_bot">I\'m Ginny, \nyour personal virtual assistant.</string>
+
+    <string name="text_recommend">Recommended Options for you. Simply select one from below:</string>
+
+    <string name="text_bot_first_msg">Hey John! where need to travel?</string>
+</resources>
