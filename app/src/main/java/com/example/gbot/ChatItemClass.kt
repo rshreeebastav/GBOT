@@ -16,6 +16,8 @@ class ChatItemClass {
     var textfour: String? = null
     var textfive: String? = null
     var text_from_oneway: String? = null
+    var btn_international_flight: String? = null
+    var btn_domestic_flight: String? = null
 
     // public constructor for the first layout
     constructor(viewType: Int, text: String?) {
@@ -24,6 +26,8 @@ class ChatItemClass {
         this.textfour = text
         this.textfive = text
         this.text_from_oneway = text
+        this.btn_international_flight = text
+        this.btn_domestic_flight = text
         this.viewType = viewType
     }
 
@@ -55,5 +59,7 @@ class ChatItemClass {
         const val LayoutFour = 3
         const val LayoutFive = 4
         const val LayoutSix = 5
+        const val LayoutFlight = 6
+        const val LayoutDomesticFlight = 7
     }
 }
