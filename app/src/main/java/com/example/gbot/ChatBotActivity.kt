@@ -1,27 +1,34 @@
 package com.example.gbot
 
+import android.app.DatePickerDialog
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gbot.databinding.ActivityChatMainBinding
+import java.util.*
 import kotlin.collections.ArrayList
 
 class ChatBotActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityChatMainBinding
     var adapterChat: AdapterChat? = null
     var recyclerView: RecyclerView? = null
-
+    private var edt_departuredate_oneway: EditText? = null
     val chatItemClasses: MutableList<ChatItemClass> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_chat_main)
+        binding = ActivityChatMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorbot)))
         // From the MainActivity, find the RecyclerView.
         recyclerView = findViewById(R.id.chat_item_rv)
+//        edt_departuredate_oneway = findViewById(R.id.edt_departuredate_oneway)
 
         // Create and set the layout manager
         // For the RecyclerView.
@@ -246,6 +253,32 @@ class ChatBotActivity : AppCompatActivity() {
         adapterChat!!.notifyDataSetChanged()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
         recyclerView!!.clearAnimation()
+
+    }
+
+    fun oneWayCalendar(view: View) {
+
+        edt_departuredate_oneway = findViewById(R.id.edt_departuredate_oneway)
+
+        val c = Calendar.getInstance()
+
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        // on below line we are creating a
+        // variable for date picker dialog.
+        val datePickerDialog = DatePickerDialog(
+            // on below line we are passing context.
+            this, { view, year, monthOfYear, dayOfMonth ->
+                val dat = (dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
+                edt_departuredate_oneway!!.setText(dat)
+            }, year, month, day
+        )
+//        datePickerDialog.datePicker.minDate = System.currentTimeMillis()
+//        datePickerDialog.datePicker.setMaxDate(System.currentTimeMillis() - (System.currentTimeMillis() % (24 * 60 * 60 * 1000)));
+        datePickerDialog.datePicker.setMinDate( 7 * 24 * 60 * 60 * 1000 + System.currentTimeMillis())
+        datePickerDialog.show()
 
     }
 
