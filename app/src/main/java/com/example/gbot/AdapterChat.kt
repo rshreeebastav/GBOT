@@ -25,6 +25,8 @@ class AdapterChat     // public constructor for this class
             3 -> ChatItemClass.LayoutFour
             4 -> ChatItemClass.LayoutFive
             5 -> ChatItemClass.LayoutSix
+            6 -> ChatItemClass.LayoutFlight
+            7 -> ChatItemClass.LayoutDomesticFlight
             else -> -1
         }
     }
@@ -146,7 +148,42 @@ class AdapterChat     // public constructor for this class
             textview.text = text_from_oneway
         }
     }
+    internal inner class LayoutFlightViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val textview: TextView
+        val linearLayout: LinearLayout
 
+        init {
+
+            // Find the Views
+            textview = itemView.findViewById(R.id.btn_international_flight)
+            linearLayout = itemView.findViewById(R.id.itemCbTripOptionInternationalLl)
+        }
+
+        // method to set the views that will
+        // be used further in onBindViewHolder method.
+        fun setViewFlight(btn_international_flight: String?) {
+            textview.text = btn_international_flight
+        }
+    }
+
+
+    internal inner class LayoutDomesticFlightViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val textview: TextView
+        val linearLayout: LinearLayout
+
+        init {
+
+            // Find the Views
+            textview = itemView.findViewById(R.id.btn_domestic_flight)
+            linearLayout = itemView.findViewById(R.id.itemCbTripOptionDomesticLl)
+        }
+
+        // method to set the views that will
+        // be used further in onBindViewHolder method.
+        fun setViewDomesticFlight(btn_domestic_flight: String?) {
+            textview.text = btn_domestic_flight
+        }
+    }
 
     // In the onCreateViewHolder, inflate the
     // xml layout as per the viewType.
@@ -193,6 +230,19 @@ class AdapterChat     // public constructor for this class
                         .inflate(R.layout.item_trip_option_one_way_chatbot, parent, false)
                 LayoutSixViewHolder(layoutSix)
             }
+            ChatItemClass.LayoutFlight -> {
+                val layoutFlight =
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_travelling_option_international_chatbot, parent, false)
+                LayoutFlightViewHolder(layoutFlight)
+            }
+            ChatItemClass.LayoutDomesticFlight -> {
+                val layoutDomesticFlight =
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.item_travelling_option_domestic_chatbot, parent, false)
+                LayoutDomesticFlightViewHolder(layoutDomesticFlight)
+            }
+
 //
             else -> {
 
@@ -290,6 +340,39 @@ class AdapterChat     // public constructor for this class
                     holder.constraintLayout.setOnClickListener { view ->
                         Toast.makeText(view.context, "Hello from Layout Six!", Toast.LENGTH_SHORT)
                             .show()
+
+
+
+                }
+            }
+
+            ChatItemClass.LayoutFlight -> {
+                val btn_international_flight = chatItemClassList[position].btn_international_flight
+                (holder as LayoutFlightViewHolder).setViewFlight(btn_international_flight)
+
+                // The following code pops a toast message
+                // when the item layout is clicked.
+                // This message indicates the corresponding
+                // layout.
+                holder.linearLayout.setOnClickListener { view ->
+                    Toast.makeText(view.context, "Hello from Layout Flight!", Toast.LENGTH_SHORT)
+                        .show()
+
+
+
+                }
+            }
+            ChatItemClass.LayoutDomesticFlight -> {
+                val btn_domestic_flight = chatItemClassList[position].btn_domestic_flight
+                (holder as LayoutDomesticFlightViewHolder).setViewDomesticFlight(btn_domestic_flight)
+
+                // The following code pops a toast message
+                // when the item layout is clicked.
+                // This message indicates the corresponding
+                // layout.
+                holder.linearLayout.setOnClickListener { view ->
+                    Toast.makeText(view.context, "Hello from Layout Domestic flight!", Toast.LENGTH_SHORT)
+                        .show()
 
 
 

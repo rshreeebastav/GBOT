@@ -67,64 +67,60 @@ class ChatBotActivity : AppCompatActivity() {
 
     fun internationalClick(view: View) {
         recyclerView!!.startLayoutAnimation()
-        adapterChat!!.notifyDataSetChanged()
-        recyclerView!!.clearAnimation()
+//        adapterChat!!.notifyDataSetChanged()
+//        recyclerView!!.clearAnimation()
 //        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
         chatItemClasses.add(
             ChatItemClass(
                 ChatItemClass.LayoutThree,
-                "Hey John! we are checking with your pre-requisites based on your travel request"
-            )
-        )
-        adapterChat!!.notifyDataSetChanged()
-//            adapterChat!!.notifyDataSetChanged()
-//            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        chatItemClasses.add(
-            ChatItemClass(
-                ChatItemClass.LayoutThree,
-                "Please allow us a movement."
-            )
-        )
-        adapterChat!!.notifyDataSetChanged()
-//            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        chatItemClasses.add(
-            ChatItemClass(
-                ChatItemClass.LayoutFour,
-                "VISA"
+                "Please select your Travelling Option."
             )
         )
         adapterChat!!.notifyDataSetChanged()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+//        chatItemClasses.add(
+//            ChatItemClass(
+//                ChatItemClass.LayoutFive,
+//                "Flight"
+//            )
+//        )
         chatItemClasses.add(
             ChatItemClass(
-                ChatItemClass.LayoutThree,
-                "We have verified your checklist and we have all the info which required for your travel request"
+                ChatItemClass.LayoutFlight,
+                "Flight"
             )
         )
+
         adapterChat!!.notifyDataSetChanged()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        chatItemClasses.add(
-            ChatItemClass(
-                ChatItemClass.LayoutThree,
-                "Please select your journey type"
-            )
-        )
-        adapterChat!!.notifyDataSetChanged()
-        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        chatItemClasses.add(
-            ChatItemClass(
-                ChatItemClass.LayoutFive,
-                "One Way"
-            )
-        )
-        adapterChat!!.notifyDataSetChanged()
-        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
-        recyclerView!!.clearAnimation()
+
     }
 
     fun domesticClick(view: View) {
         recyclerView!!.startLayoutAnimation()
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Please select your Travelling Option."
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+//        chatItemClasses.add(
+//            ChatItemClass(
+//                ChatItemClass.LayoutFive,
+//                "Flight"
+//            )
+//        )
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutDomesticFlight,
+                "Flight"
+            )
+        )
 
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
         chatItemClasses.add(
             ChatItemClass(
                 ChatItemClass.LayoutThree,
@@ -194,6 +190,62 @@ class ChatBotActivity : AppCompatActivity() {
         recyclerView!!.startLayoutAnimation()
         recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
 
+
+    }
+
+    fun flightWayClick(view: View) {
+        recyclerView!!.startLayoutAnimation()
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Hey John! we are checking with your pre-requisites based on your travel request"
+            )
+        )
+
+        adapterChat!!.notifyDataSetChanged()
+//            adapterChat!!.notifyDataSetChanged()
+//            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Please allow us a movement."
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+//            recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutFour,
+                "VISA"
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "We have verified your checklist and we have all the info which required for your travel request"
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutThree,
+                "Please select your journey type"
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        chatItemClasses.add(
+            ChatItemClass(
+                ChatItemClass.LayoutFive,
+                "One Way"
+            )
+        )
+        adapterChat!!.notifyDataSetChanged()
+        recyclerView!!.scrollToPosition(chatItemClasses.size - 1);
+        recyclerView!!.clearAnimation()
 
     }
 
