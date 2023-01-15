@@ -4,33 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
     android:background="#F5F2EC"
-    android:padding="@dimen/_12sdp">
+
+    >
 
     <LinearLayout
         android:id="@+id/itemCbTripOptionInternationalLl"
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="@dimen/_43sdp"
-        android:background="@drawable/btn_outline_border_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintVertical_bias="0.5">
 
         <Button
             android:id="@+id/btn_international_flight"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_130sdp"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/btn_ripple_effect"
+            android:clickable="true"
+            android:gravity="center"
+            android:contextClickable="true"
             android:onClick="flightWayClick"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:background="@drawable/btn_borderless"
-            android:text="Flight" />
+            android:padding="@dimen/_12sdp"
+            android:text="FLIGHT"
+            android:textColor="@color/black" />
+
 
 
     </LinearLayout>

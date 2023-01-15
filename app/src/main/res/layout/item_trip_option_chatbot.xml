@@ -39,6 +39,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_15sdp"
             android:background="@drawable/btn_borderless"
+            android:onClick="insertData"
             android:text="Roundtrip" />
 
         <Button
