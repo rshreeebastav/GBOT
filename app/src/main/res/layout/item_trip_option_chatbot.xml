@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/itemCbTripTypeLl"
-        android:layout_width="@dimen/_266sdp"
+        android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_43sdp"
         android:background="@drawable/btn_outline_border_design"
         android:gravity="center"
@@ -28,18 +28,18 @@
             android:layout_height="wrap_content"
             android:onClick="oneWayClick"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_1sdp"
             android:background="@drawable/btn_borderless"
             android:text="One Way" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="34dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_15sdp"
             android:background="@drawable/btn_borderless"
-            android:onClick="insertData"
+            android:onClick="roundWayClick"
             android:text="Roundtrip" />
 
         <Button
@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_15sdp"
+            android:onClick="multiCityClick"
             android:background="@drawable/btn_borderless"
             android:text="Multicity" />
     </LinearLayout>

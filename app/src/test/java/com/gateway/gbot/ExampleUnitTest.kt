@@ -1,4 +1,4 @@
-package com.example.gbot
+package com.gateway.gbot
 
 import org.junit.Test
 

@@ -1,10 +1,11 @@
-package com.example.gbot
+package com.gateway.gbot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 

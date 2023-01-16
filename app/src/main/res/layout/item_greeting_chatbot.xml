@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:fillViewport="true"
-    tools:context=".ChatBotActivity">
+    tools:context="com.gateway.gbot.ChatBotActivity">
 
     <LinearLayout
         android:id="@+id/itemCbGrettingLlMain"

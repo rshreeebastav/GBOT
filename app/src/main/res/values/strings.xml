@@ -17,4 +17,8 @@
     <string name="To">To:</string>
     <string name="Departure_Date">Departure Date :</string>
     <string name="Arrival_Date">Arrival Date:</string>
+    <string name="Return_date">Return : </string>
+
+    <string name="add_return_date">Add Return Date: </string>
+
 </resources>
